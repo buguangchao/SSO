@@ -15,6 +15,7 @@ namespace WebApi.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
+            var claims = User.Claims;
             return new string[] { "value1", "value2" };
         }
 

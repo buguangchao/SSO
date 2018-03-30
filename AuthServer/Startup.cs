@@ -21,6 +21,8 @@ namespace AuthServer
             services.AddIdentityServer()
                 //.AddDeveloperSigningCredential()
                 .AddSigningCredential(new X509Certificate2(@"E:\bugc\CoreDemo\AuthServer\AuthServer\Pfx\socialnetwork.pfx", "123456"))
+                //然后我们需要配置Authorization Server来允许使用这些Identity Resources, Statup的:
+                .AddInMemoryIdentityResources(InMemoryConfiguration.GetIdentityResources())
                 .AddTestUsers(InMemoryConfiguration.GetTestUsers().ToList())
                 .AddInMemoryApiResources(InMemoryConfiguration.GetApiResources())
                 .AddInMemoryClients(InMemoryConfiguration.GetClients());
