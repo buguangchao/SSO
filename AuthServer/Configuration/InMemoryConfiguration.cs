@@ -33,6 +33,7 @@ namespace AuthServer.Configuration
         /// <returns></returns>
         public static IEnumerable<Client> GetClients()
         {
+            
             return new List<Client> {
                 new Client{
                     ClientId ="socialnetwork",
